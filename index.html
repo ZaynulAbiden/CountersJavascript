@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<style>
+    body {
+        background-color: aquamarine;
+    }
+    
+    .counterBox {
+        height: 250px;
+        width: 250px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        border: 10px grey groove;
+        box-shadow: 10px 10px 5px 5px black;
+        margin-left: 100px;
+    }
+    
+    .counter {
+        margin-top: 80px;
+        font-size: 75px;
+        text-shadow: 5px 2px 2px white;
+    }
+    
+    .title {
+        margin-top: 100px;
+        font-size: 50px;
+    }
+</style>
+
+<body>
+    <div class="counterBox">
+        <h1 class="counter">
+            190
+        </h1>
+        <h1 class="title">PROJECTS</h1>
+    </div>
+
+    <div class="counterBox">
+        <h1 class="counter">
+            350
+        </h1>
+        <h1 class="title">SERVICES</h1>
+    </div>
+
+
+    <div class="counterBox">
+        <h1 class="counter">
+            400
+        </h1>
+        <h1 class="title">CUSTOMER</h1>
+    </div>
+
+    <script>
+        var value = document.getElementsByClassName("counter")
+        var start = 0
+        var end = []
+        for (let i = 0; i < value.length; i++)
+            end[i] = value[i].innerText
+
+        setInterval(function() {
+
+            if (start <= end[0]) {
+                value[0].innerHTML = start + '+'
+                value[1].innerHTML = start + '+'
+                start += 1
+            }
+            if (start <= end[1]) {
+                value[1].innerHTML = start + '+'
+                start += 1
+            }
+
+            if (start <= end[2]) {
+                value[2].innerHTML = start + '+'
+                start += 1
+            }
+        }, 10)
+    </script>
+</body>
+
+</html>
